@@ -1,0 +1,139 @@
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div {
+  text-align: center;
+}
+.container {
+  position: relative;
+}
+.next-ani {
+}
+.calendar-year {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.select-btn {
+  visibility: visible;
+  cursor: pointer;
+}
+.calendar-item {
+  width: 13.58571428571429%; //원래는 14.~~~임
+  border: 1px solid black;
+}
+.date12-box {
+  white-space: nowrap;
+  width: 300px;
+}
+.date12 {
+  display: inline-block;
+  transform: translateX(-600px);
+  transition: all 0.3s;
+}
+.calendar-date {
+  width: 13.58571428571429%;
+  padding-bottom: 35px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.calendar-date.click {
+  background-color: wheat;
+  color: white;
+}
+.calendar-select {
+  border: 1px solid red;
+  height: 200px;
+  position: relative;
+}
+
+.calendar-select.none {
+  display: none;
+}
+.calendar-select.show {
+  display: block;
+}
+.calendar-select.show.none {
+  display: none;
+}
+.calendar-year-month-select {
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+
+.calendar-year-month-select-box {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: space-around;
+  height: 150px;
+  width: 300px;
+  flex-wrap: wrap;
+}
+.calendar-year-box {
+  padding-top: 3px;
+  max-height: 140px;
+  overflow-y: auto;
+  width: 110px;
+}
+.calendar-month-box {
+  padding-top: 3px;
+  max-height: 140px;
+  overflow-y: auto;
+  width: 110px;
+}
+.subsub {
+  width: 50%;
+}
+.calendar-year-layout {
+  cursor: pointer;
+  width: 50%;
+}
+.calendar-year-layout.active {
+  background-color: #6884b8;
+  width: 100%;
+}
+.calendar-year-layout.none {
+  background-color: white;
+  width: 100%;
+}
+
+.calendar-month-layout {
+  cursor: pointer;
+  width: 50%;
+}
+.calendar-month-layout.active {
+  background-color: #6884b8;
+  width: 100%;
+}
+.calendar-month-layout.none {
+  background-color: white;
+  width: 100%;
+}
+.calendar-date.active {
+  background-color: yellowgreen;
+  color: white;
+}
+.calendar-date.sat {
+  color: blue;
+}
+.calendar-date.sun {
+  color: red;
+}
+
+.calendar-date.nextdate {
+  color: #e0e0e0;
+}
+.calendar-date.today {
+  background-color: #00c73c;
+  color: white;
+}
+.today-calendar {
+  margin-left: 30px;
+  border: 1px solid;
+  cursor: pointer;
+  padding: 10px;
+}

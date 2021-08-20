@@ -1,0 +1,106 @@
+<html>
+  <div class="container">
+    <!-- <table>
+      <thead>
+        <tr class="header">
+          <td><input type="button" value="<" (click)="prev_month()" /></td>
+          <td colspan="3">{{ targetDate | date: "YYYY년 M월" }}</td>
+          <td><input type="button" value=">" (click)="next_month()" /></td>
+        </tr>
+      </thead>
+    </table> -->
+    <div class="calendar-year">
+      <button (click)="prev_month()"><</button>
+      <span
+        class="select-btn"
+        [class.show]="activeSelect"
+        (click)="activeSelect = !activeSelect"
+        >{{ targetDate | date: "YYYY년 M월" }}</span
+      >
+      <button class="next-ani" (click)="next_month()">></button>
+    </div>
+
+    <div style="display: flex; width: 300px; flex-wrap: wrap">
+      <div class="calendar-item" [class.sun]="sun">일</div>
+      <div class="calendar-item">월</div>
+      <div class="calendar-item">화</div>
+      <div class="calendar-item">수</div>
+      <div class="calendar-item">목</div>
+      <div class="calendar-item">금</div>
+      <div class="calendar-item" [class.sat]="sat">토</div>
+    </div>
+    <div class="calendar-select" *ngIf="activeSelect">
+      <!-- activeSelect는 처음 false 클릭하면 true 만약 none이되면 false 아니면 true -->
+      <!-- none 일때 activeSelect가 들어오면 show 클래스 리턴 -->
+      <div class="calendar-year-month-select">
+        <div class="calendar-year-select">년도</div>
+        <div class="calendar-month-select">월</div>
+      </div>
+      <div class="calendar-year-month-select-box">
+        <div class="calendar-year-box">
+          <div
+            class="calendar-year-layout"
+            [class.active]="selectYear === year"
+            (click)="selectYear = year"
+            *ngFor="let year of yearArr"
+          >
+            {{ year }}
+          </div>
+        </div>
+        <div class="calendar-month-box">
+          <div
+            [class.active]="selectMonth === month"
+            class="calendar-month-layout"
+            (click)="selectMonth = month; selectDate()"
+            *ngFor="let month of monthArr"
+          >
+            {{ month }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="date12-box">
+      <div
+        class="date12"
+        *ngFor="let list of date12"
+        [style.transform]="'translateX(' + x + 'px)'"
+      >
+        <div style="display: flex; width: 300px; flex-wrap: wrap">
+          <div
+            class="calendar-date"
+            [class.active]="click2 === item"
+            (click)="click2 = item"
+            id="date"
+            [class.sun]="item.getDay() === 0"
+            [class.sat]="item.getDay() === 6"
+            [class.nextdate]="item.getMonth() !== targetDate.getMonth()"
+            [class.today]="
+              realtoday === item.getDate() &&
+              month === item.getMonth() &&
+              year === item.getFullYear()
+            "
+            *ngFor="let item of dates"
+          >
+            {{ item | date: "d" }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 날짜감싸고,12개로 감싸고,12개를 감싼거에 하나더 감쌈. -->
+  </div>
+  <div
+    class="today-calendar"
+    *ngIf="targetDate.getMonth() !== month || targetDate.getFullYear() !== year"
+    (click)="todayDate()"
+  >
+    이번달로 가자!
+  </div>
+
+  <!-- item.getDate()는 전체임   -->
+  <!-- [class.predate]="item.getDay() === 6"
+[class.nextdate]="item.getDay() === 6" -->
+  <!-- page -> calendar-page -->
+  <!-- calendar -> common module (calenadr라는 이름으로 생성하고) -->
+  <!-- exports 됨. 이 common에는 router 필요없음 -->
+  <!-- calendar-page-module에서 common/calendar.module을 호출해서 사용 imports 배열에 넣으면됨 -->
+</html>
