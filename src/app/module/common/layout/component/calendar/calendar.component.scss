@@ -9,8 +9,7 @@ div {
 .container {
   position: relative;
 }
-.next-ani {
-}
+
 .calendar-year {
   display: flex;
   align-items: center;
@@ -27,6 +26,7 @@ div {
 .date12-box {
   white-space: nowrap;
   width: 300px;
+  overflow: hidden;
 }
 .date12 {
   display: inline-block;
@@ -135,5 +135,4 @@ div {
   margin-left: 30px;
   border: 1px solid;
   cursor: pointer;
-  padding: 10px;
 }

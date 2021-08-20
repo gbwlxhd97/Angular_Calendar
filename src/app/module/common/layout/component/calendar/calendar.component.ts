@@ -72,9 +72,7 @@ export class CalendarComponent implements OnInit {
   renderDate(n: Date) {
     const next = new Date(n);
     this.toDate(next);
-
     this.targetDate = next;
-
     const start = new Date(n); // 결국 이값은 오늘날의 날짜의 정보를 가져옴
     this.toDate(start); //start는 해당하는 달 시 분 초를 가져옴 다만 값은 모두 0으로 가져옴
     this.sun = start.getDay();
@@ -118,6 +116,7 @@ export class CalendarComponent implements OnInit {
 
     if (this.x === 0) {
       this.x = -3600;
+      this.x += 300;
     }
     console.log(this.x);
   }
@@ -127,13 +126,14 @@ export class CalendarComponent implements OnInit {
     this.toDate(next);
     next.setMonth(next.getMonth() + 1);
     this.renderDate(next);
-
-    if (this.x <= 0) {
-      this.x = this.x - 300;
-    }
-    if (this.x === -3600) {
-      this.x = 0;
-      this.x -= 300;
+    if (this.x != -3900) {
+      if (this.x <= 0) {
+        this.x = this.x - 300;
+      }
+      if (this.x === -3600) {
+        this.x = 0;
+        this.x -= 300;
+      }
     }
     console.log(this.x);
   }

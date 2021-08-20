@@ -11,13 +11,22 @@
     </table> -->
     <div class="calendar-year">
       <button (click)="prev_month()"><</button>
+      <div
+        class="today-calendar"
+        *ngIf="
+          targetDate.getMonth() !== month || targetDate.getFullYear() !== year
+        "
+        (click)="todayDate()"
+      >
+        이번달로 가자!
+      </div>
       <span
         class="select-btn"
         [class.show]="activeSelect"
         (click)="activeSelect = !activeSelect"
         >{{ targetDate | date: "YYYY년 M월" }}</span
       >
-      <button class="next-ani" (click)="next_month()">></button>
+      <button (click)="next_month()">></button>
     </div>
 
     <div style="display: flex; width: 300px; flex-wrap: wrap">
@@ -87,13 +96,6 @@
       </div>
     </div>
     <!-- 날짜감싸고,12개로 감싸고,12개를 감싼거에 하나더 감쌈. -->
-  </div>
-  <div
-    class="today-calendar"
-    *ngIf="targetDate.getMonth() !== month || targetDate.getFullYear() !== year"
-    (click)="todayDate()"
-  >
-    이번달로 가자!
   </div>
 
   <!-- item.getDate()는 전체임   -->
