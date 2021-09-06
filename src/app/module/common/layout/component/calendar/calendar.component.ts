@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
@@ -18,6 +18,22 @@ export class CalendarComponent implements OnInit {
       this.date12.push(i);
     }
   }
+
+  @Input() getDisableDate: any = [];
+
+  setDisableDate(able: any) {
+    this.toDate(this.getDisableDate[0].start);
+
+    if (
+      this.getDisableDate[0].start.getTime() <= able.getTime() &&
+      this.getDisableDate[0].end.getTime() >= able.getTime()
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   today = new Date();
   realtoday = this.today.getDate();
   year = this.today.getFullYear();

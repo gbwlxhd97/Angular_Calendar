@@ -9,4 +9,8 @@ export class MainPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  disableDate = [
+    { start: new Date('2021-09-01'), end: new Date('2021-09-05') },
+  ];
 }

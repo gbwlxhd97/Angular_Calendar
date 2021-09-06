@@ -83,6 +83,7 @@
             [class.sun]="item.getDay() === 0"
             [class.sat]="item.getDay() === 6"
             [class.nextdate]="item.getMonth() !== targetDate.getMonth()"
+            [class.disabled]="setDisableDate(item)"
             [class.today]="
               realtoday === item.getDate() &&
               month === item.getMonth() &&

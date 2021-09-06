@@ -131,6 +131,11 @@ div {
   background-color: #00c73c;
   color: white;
 }
+.calendar-date.disabled {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
+}
 .today-calendar {
   margin-left: 30px;
   border: 1px solid;

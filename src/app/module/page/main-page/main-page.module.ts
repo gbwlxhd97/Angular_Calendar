@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LayoutMoudle } from '../../common/layout/layout.module';
+import { SliderModule } from '../../common/slider/slider.module';
 import { MainPageComponent } from './component/main.component';
 
 @NgModule({
@@ -9,6 +10,7 @@ import { MainPageComponent } from './component/main.component';
   imports: [
     CommonModule,
     LayoutMoudle,
+    SliderModule,
     RouterModule.forChild([{ path: '', component: MainPageComponent }]),
   ],
 })
