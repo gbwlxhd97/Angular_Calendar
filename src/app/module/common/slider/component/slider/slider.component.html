@@ -1,16 +1,12 @@
-<p>slider works!</p>
-<!-- <div
-        class="date12"
-        *ngFor="let list of date12"
-        [style.transform]="'translateX(' + x + 'px)'"
-    >
-        <div style="display: flex; width: 300px; flex-wrap: wrap">
-        <div
-            class="calendar-date"
-            [class.active]="click2 === item"
-            (click)="click2 = item"id="date"
-            [class.nextdate]="item.getMonth() !== targetDate.getMonth()"
-            
-        </div>
-        </div>
-    </div> -->
+<button (click)="prev_slide()">왼쪽</button>
+<button (click)="next_slide()">오른쪽</button>
+<div class="slide">
+  <div class="date12" [style.transform]="'translateX(' + x + 'px)'">
+    <ng-content></ng-content>
+  </div>
+  <div class="round-box">
+    <div class="round" *ngFor="let list of date12">
+      <button (click)="clickRound()">{{ list }}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+// * { // item에 Transform 먹였을때,
+//   color: white;
+// }
+// .slide-item-box {
+//   white-space: nowrap;
+//   width: 80px;
+//   overflow: hidden;
+// }
+// .slide-item {
+//   display: inline-block;
+//   flex-wrap: wrap;
+//   background-color: blue;
+//   width: 80px;
+//   height: 80px;
+//   transition: all 0.3s;
+// }
+// button {
+//   color: black;
+// }
+
+.slide-item-box {
+  display: inline-block;
+}
+
+.slide-item {
+  width: 80px;
+  height: 80px;
+  color: white;
+  background-color: blue;
+}
