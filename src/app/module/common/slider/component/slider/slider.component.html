@@ -4,9 +4,28 @@
   <div class="date12" [style.transform]="'translateX(' + x + 'px)'">
     <ng-content></ng-content>
   </div>
-  <div class="round-box">
-    <div class="round" *ngFor="let list of date12">
-      <button (click)="clickRound()">{{ list }}</button>
+</div>
+<br />
+<div class="round-box">
+  <div class="round">
+    <div class="round-index">
+      <div (click)="x = 0" [class.active]="x === 0">{{ date4[0] }} ◎</div>
+      <div (click)="x = -widX" [class.active]="x === -widX">
+        {{ date4[1] }} ◎
+      </div>
+      <div (click)="x = -widX * 2" [class.active]="x === -widX * 2">
+        {{ date4[2] }} ◎
+      </div>
+      <div (click)="x = -widX * 3" [class.active]="x === -widX * 3">
+        {{ date4[3] }} ◎
+      </div>
     </div>
   </div>
 </div>
+<!-- <div
+  *ngFor="let list of date4; let idx = index"
+  (click)="roundfindIndex()"
+  [class.active]="list === -widX"
+>
+  {{ list }} ◎
+</div> -->

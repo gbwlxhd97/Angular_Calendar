@@ -15,33 +15,34 @@ export class SliderItemComponent implements OnInit {
   x = 0;
   date12: any = [];
   ngOnInit(): void {}
-  prev_month() {
-    if (this.x >= 0) {
-      this.x = this.x + 80;
-    }
-    if (this.x <= 0) {
-      this.x += 80;
-    }
-    if (this.x == 80) {
-      this.x = -880;
-    }
-    if (this.x == -880) {
-      this.x = -880;
-    }
-    console.log(this.x);
-  }
 
-  next_month() {
-    if (this.x <= 0) {
-      this.x = this.x - 80;
-    }
-    if (this.x >= 0) {
-      this.x -= 80;
-    }
+  // prev_month() {
+  //   if (this.x >= 0) {
+  //     this.x = this.x + 80;
+  //   }
+  //   if (this.x <= 0) {
+  //     this.x += 80;
+  //   }
+  //   if (this.x == 80) {
+  //     this.x = -880;
+  //   }
+  //   if (this.x == -880) {
+  //     this.x = -880;
+  //   }
+  //   console.log(this.x);
+  // }
 
-    if (this.x == -960) {
-      this.x = 0;
-    }
-    console.log(this.x);
-  }
+  // next_month() {
+  //   if (this.x <= 0) {
+  //     this.x = this.x - 80;
+  //   }
+  //   if (this.x >= 0) {
+  //     this.x -= 80;
+  //   }
+
+  //   if (this.x == -960) {
+  //     this.x = 0;
+  //   }
+  //   console.log(this.x);
+  // }
 }
